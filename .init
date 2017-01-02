@@ -1,0 +1,17 @@
+## Initialize bash completion ##
+complete -o default -o nospace -W "$(/usr/bin/env ruby -ne 'puts $_.split(/[,\s]+/)[1..-1].reject{|host| host.match(/\*|\?/)} if $_.match(/^\s*Host\s+/);' < $HOME/.ssh/config)" scp sftp ssh
+
+## Initialize brew auto completion ##
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+## Initialize gpg agent ##
+eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
+export GPG_TTY=$(tty)
+export GPG_AGENT_INFO
+
+## Initialize nvm ##
+export NVM_DIR="/Users/jedmeier/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+

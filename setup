@@ -1,0 +1,18 @@
+#!/bin/bash
+
+brew install bash-completion
+brew install wget
+brew install gnupg
+brew install git
+
+brew install maven
+brew cask install java
+brew cask install sts
+
+brew cask install slack
+brew cask install virtualbox
+brew cask install google-chrome
+brew cask install iterm2
+
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /usr/local/etc/bash_completion.d/git
+chmod a+x /usr/local/etc/bash_completion.d/git

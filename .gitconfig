@@ -1,0 +1,5 @@
+[user]
+  email = johannes.edmeier@codecentric.de
+  name = Johannes Edmeier
+[core]
+  autocrlf = input
