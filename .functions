@@ -38,3 +38,6 @@ git_pull_all() {
   done
 }
 
+vscode () {
+  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* 
+}

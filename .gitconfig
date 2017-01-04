@@ -3,3 +3,5 @@
   name = Johannes Edmeier
 [core]
   autocrlf = input
+[pull]
+	rebase = true
