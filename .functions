@@ -1,6 +1,14 @@
 ## Open man page as PDF
 pman () { man -t "${1}" | open -f -a "Preview"; }
 
+find-up () {
+  path="$(pwd)"
+  while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+    path="${path%/*}"
+  done
+  echo "$path"
+}
+
 ## initialize maven wrapper
 mvnwinit() {
   if [ $# -eq 0 ]
@@ -12,14 +20,16 @@ mvnwinit() {
 }
 
 mvnw() {
-  if [[ $1 == "init" ]]
-  then
+  if [[ $1 == "init" ]]; then
     mvnwinit $2
-  elif [[ -f mvnw ]]
-  then
-    ./mvnw "$@"
-    return $?
-  else echo "No maven wrapper available for this project! Run mvnw init first."
+  else
+    MPATH="$(find-up mvnw)"
+    if [[ ! -z "$MPATH" ]]; then
+      "$MPATH/mvnw" "$@"
+      return $?
+    else
+      echo "No maven wrapper available for this project! Run mvnw init first."
+    fi
   fi
 }
 
@@ -30,11 +40,16 @@ git_org_clone() {
   curl https://${GITHUB_BASE_URL}/api/v3/orgs/${ORG_NAME}/repos?access_token=${ACCESS_TOKEN} | grep -o 'git@[^"]*' | xargs -L1 git clone
 }
 
-git_pull_all() {
+
+
+gita() {
   for repo in $(find . -type d -d 1); do
-    cd $repo
-    git pull $1 $2
-    cd ..
+    if [[ -d "$repo/.git" ]]; then
+      echo -e "\033[0;31m>> $repo <<\033[0m"
+      cd $repo
+      git $@
+      cd ..
+    fi
   done
 }
 

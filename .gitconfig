@@ -3,5 +3,6 @@
   name = Johannes Edmeier
 [core]
   autocrlf = input
+	excludesfile = ~/.dotfiles/.gitignore
 [pull]
 	rebase = true
