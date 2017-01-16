@@ -1,6 +1,7 @@
 syntax on
 
 set nocompatible
+filetype off
 
 set number
 set expandtab
@@ -14,9 +15,12 @@ set incsearch
 set ignorecase
 
 
-" Syntax highlighting for gradle files
-au BufNewFile,BufRead *.gradle setf groovy
-au BufNewFile,BufRead *.sbt setf scala
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+
+call vundle#end()            " required
 filetype plugin indent on    " required
-
