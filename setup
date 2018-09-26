@@ -1,13 +1,11 @@
 #!/bin/bash
 
-brew install bash-completion
 brew install wget
 brew install gnupg2
 brew install git
 
 brew install maven
 brew cask install java
-brew cask install sts
 
 brew cask install slack
 brew cask install virtualbox

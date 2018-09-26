@@ -7,11 +7,17 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 ## Initialize gpg agent ##
-eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
-export GPG_TTY=$(tty)
-export GPG_AGENT_INFO
+if [ -z GPG_AGENT_INFO ]; then
+    eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
+    export GPG_TTY=$(tty)
+    export GPG_AGENT_INFO
+fi
+
+## Initialize ssh-agent
+ssh-add -K > /dev/null 2>&1
 
 ## Initialize nvm ##
 export NVM_DIR="/Users/jedmeier/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
