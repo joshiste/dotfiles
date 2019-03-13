@@ -33,23 +33,3 @@ mvnw() {
   fi
 }
 
-git_org_clone() {
-  ORG_NAME=$1
-  ACCESS_TOKEN=$2
-  GITHUB_BASE_URL=git.codecentric.de
-  curl https://${GITHUB_BASE_URL}/api/v3/orgs/${ORG_NAME}/repos?access_token=${ACCESS_TOKEN} | grep -o 'git@[^"]*' | xargs -L1 git clone
-}
-
-
-
-gita() {
-  for repo in $(find . -type d -d 1); do
-    if [[ -d "$repo/.git" ]]; then
-      echo -e "\033[0;31m>> $repo <<\033[0m"
-      cd $repo
-      git $@
-      cd ..
-    fi
-  done
-}
-
