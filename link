@@ -13,12 +13,6 @@ link() {
 }
 
 # Link necessary files
-for file in .{bash_profile,bashrc,gitconfig,vimrc,bash_it}; do
+for file in .{bash_profile,bashrc,git,gitconfig,vim,vimrc,bash_it}; do
   link $file $file
-done
-
-# Link files in .config dir
-mkdir -p $HOME/.config
-for folder in .config/*; do
-  link $folder $folder
 done
