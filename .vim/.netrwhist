@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/jedmeier/projects/puc/cdpipeline-jenkins-job-dsl'
 let g:netrw_dirhist_2='/Users/jedmeier/projects/puc/fashionap-infrastructure/vagrant/group_vars/fashionap'
 let g:netrw_dirhist_3='/Users/jedmeier/projects/spring-boot-admin/spring-boot-admin-server-ui-turbine'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/jedmeier/projects/puc/fashionap-infrastructure/.va
 let g:netrw_dirhist_6='/Users/jedmeier/projects/puc/fashionap-infrastructure/clusterc/group_vars/fashionap-db'
 let g:netrw_dirhist_7='/Users/jedmeier/projects/puc/fashionap-infrastructure/vagrant/group_vars'
 let g:netrw_dirhist_8='/Users/jedmeier/projects/puc/dokumentation/src/docs/asciidoc/entwicklungsumgebung/server_laufzeitumgebungen'
+let g:netrw_dirhist_9='/Users/jedmeier/.dotfiles'

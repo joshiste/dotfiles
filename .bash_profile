@@ -43,8 +43,3 @@ export SCM_CHECK=true
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jedmeier/.sdkman"
-[[ -s "/Users/jedmeier/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jedmeier/.sdkman/bin/sdkman-init.sh"
-

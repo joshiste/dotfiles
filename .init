@@ -19,5 +19,8 @@ ssh-add -K > /dev/null 2>&1
 ## Initialize nvm ##
 export NVM_DIR="/Users/jedmeier/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/jedmeier/.sdkman"
+[[ -s "/Users/jedmeier/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jedmeier/.sdkman/bin/sdkman-init.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
