@@ -3,13 +3,23 @@
   name = Johannes Edmeier
 [core]
   autocrlf = input
-    excludesfile = ~/.dotfiles/.gitignore
+  excludesfile = ~/.dotfiles/.gitignore
+
 [pull]
-    rebase = preserve
+	rebase = preserve
 
 [alias]
-    pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+
 [rebase]
 	autoStash = true
+
 [includeIf "gitdir:~/projects/invia/"]
-    path = .gitconfig-invia
+	path = ~/.dotfiles/.gitconfig-invia
+
+[rerere]
+	enabled = true
+[submodule]
+	recurse = true
+[url "ssh://git@git.invia.io:/"]
+	insteadOf = https://git.invia.io/

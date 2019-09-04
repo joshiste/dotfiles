@@ -1,17 +1,13 @@
 ## Initialize bash completion ##
 complete -o default -o nospace -W "$(/usr/bin/env ruby -ne 'puts $_.split(/[,\s]+/)[1..-1].reject{|host| host.match(/\*|\?/)} if $_.match(/^\s*Host\s+/);' < $HOME/.ssh/config)" scp sftp ssh
 
-## Initialize brew auto completion ##
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
-
 ## Initialize gpg agent ##
 if [ -z GPG_AGENT_INFO ]; then
     eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
     export GPG_TTY=$(tty)
     export GPG_AGENT_INFO
 fi
+
 
 ## Initialize ssh-agent
 ssh-add -K > /dev/null 2>&1
@@ -20,7 +16,7 @@ ssh-add -K > /dev/null 2>&1
 export NVM_DIR="/Users/jedmeier/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jedmeier/.sdkman"
 [[ -s "/Users/jedmeier/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jedmeier/.sdkman/bin/sdkman-init.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
