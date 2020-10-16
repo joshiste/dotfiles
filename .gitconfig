@@ -1,12 +1,13 @@
 [user]
-  email = johannes.edmeier@codecentric.de
+  email = johannes.edmeier@steadybit.com
   name = Johannes Edmeier
+	signingkey = 0E01FDDCD30A045A64401BF2BA5E1B718E414AF1
 [core]
   autocrlf = input
   excludesfile = ~/.dotfiles/.gitignore
 
 [pull]
-	rebase = preserve
+	rebase = merges
 
 [alias]
 	pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
@@ -14,12 +15,11 @@
 [rebase]
 	autoStash = true
 
-[includeIf "gitdir:~/projects/invia/"]
-	path = ~/.dotfiles/.gitconfig-invia
-
 [rerere]
 	enabled = true
+
 [submodule]
 	recurse = true
-[url "ssh://git@git.invia.io:/"]
-	insteadOf = https://git.invia.io/
+
+[commit]
+	gpgsign = true

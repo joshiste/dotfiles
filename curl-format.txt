@@ -1,0 +1,2 @@
+\n
+%{url_effective} - %{http_code} - %{time_total}s \n
