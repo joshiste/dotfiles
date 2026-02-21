@@ -1,10 +1,26 @@
 ## Initialize gpg agent ##
-if [ -z GPG_AGENT_INFO ]; then
-    eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
-    export GPG_TTY=$(tty)
-    export GPG_AGENT_INFO
-fi
+#if [ -z GPG_AGENT_INFO ]; then
+#    eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
+#    export GPG_TTY=$(tty)
+#    export GPG_AGENT_INFO
+#fi
 
+
+#homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## Initialize ssh-agent
-ssh-add -K > /dev/null 2>&1
+{ ssh-add --apple-load-keychain 2>/dev/null & disown; } 2>/dev/null
+
+#cargo
+source "$HOME/.cargo/env"
+
+# set path for gcloud components
+source "/opt/homebrew/share/google-cloud-sdk/path.bash.inc"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# This loads nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

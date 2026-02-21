@@ -9,27 +9,20 @@ find-up () {
   echo "$path"
 }
 
-## initialize maven wrapper
-mvnwinit() {
-  if [ $# -eq 0 ]
-  then
-    mvn -N io.takari:maven:wrapper
-  else
-    mvn -N io.takari:maven:wrapper -Dmaven=$1
-  fi
+
+cd() { if [ $# -eq 2 ]; then builtin cd "${PWD/$1/$2}"; else builtin cd "$1"; fi }
+
+flushDNS() {
+  sudo dscacheutil -flushcache
+  sudo killall -HUP mDNSResponder
+  echo "DNS cache flushed"
 }
 
-mvnw() {
-  if [[ $1 == "init" ]]; then
-    mvnwinit $2
-  else
-    MPATH="$(find-up mvnw)"
-    if [[ ! -z "$MPATH" ]]; then
-      "$MPATH/mvnw" "$@"
-      return $?
-    else
-      echo "No maven wrapper available for this project! Run mvnw init first."
-    fi
-  fi
+function tg() {
+	travelgrunt -out-file ~/.tg-path ${@} && cd "$(cat ~/.tg-path)"
+}
+
+function tt() {
+	travelgrunt -top -out-file ~/.tg-path && cd "$(cat ~/.tg-path)"
 }
 

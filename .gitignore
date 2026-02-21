@@ -64,3 +64,5 @@ dist/
 #nbdist/
 .nb-gradle/
 
+#claude
+**/.claude/**/*.local.json

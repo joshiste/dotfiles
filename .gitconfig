@@ -1,7 +1,8 @@
 [user]
   email = johannes.edmeier@steadybit.com
   name = Johannes Edmeier
-	signingkey = 0E01FDDCD30A045A64401BF2BA5E1B718E414AF1
+  signingkey = 0E01FDDCD30A045A64401BF2BA5E1B718E414AF1
+
 [core]
   autocrlf = input
   excludesfile = ~/.dotfiles/.gitignore
@@ -23,3 +24,18 @@
 
 [commit]
 	gpgsign = true
+[gpg]
+	program = gpg
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+[http]
+	cookiefile = /Users/jedmeier/.gitcookies
+
+[includeIf "gitdir:~/projects/sma_chg_log/"]
+	path = ~/.gitconfig-sma_chg_log

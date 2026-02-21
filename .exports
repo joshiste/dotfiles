@@ -1,3 +1,19 @@
-## PATH ##
-export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH:/usr/local/lib/ruby/gems/2.6.0/bin:~/go/bin
+export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:~/bin:$PATH:~/go/bin
 
+export PATH=/opt/homebrew/opt/libpq/bin:$PATH
+
+export LESS="-R"
+
+export SCM_GIT_GITSTATUS_DIR="/opt/homebrew/opt/gitstatus/"
+
+export TG_DOWNLOAD_DIR="$HOME/.cache/terragrunt"
+
+export JAVA_HOME="$HOME/sdkman/candidates/java/current/bin"
+
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+
+export CLEARFEED_APIKEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMWE5M2I4YzgtNTk4Zi00N2FjLTkyZTAtN2JkZjQwZDJkNjE4IiwiaWF0IjoxNzY5NzAyNDMxMDIzfQ.dAWAvMSSFiG71knU70diVnpA2V5leesuDtr3wG2f1wo
+export BUSINESSMAP_API_KEY=jGEBA5d6rPfvYj3RS0bWRoOHJA1ex3r02KflByw1
+
+export NVM_DIR="$HOME/.nvm"
