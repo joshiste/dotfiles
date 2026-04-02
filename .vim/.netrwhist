@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/jedmeier/.dotfiles/.git'
+let g:netrw_dirhist_9='/Users/jedmeier/projects/steadybit/platform/platform-port-splitter'
 let g:netrw_dirhist_8='/Users/jedmeier/projects/steadybit/mcp'
 let g:netrw_dirhist_7='/Users/jedmeier/projects/steadybit/action-kit/go/action_kit_commons'
 let g:netrw_dirhist_6='/Users/jedmeier/.config/kafkactl'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_4='/Users/jedmeier/projects/steadybit/extension-container/.g
 let g:netrw_dirhist_3='/Users/jedmeier/projects/steadybit/extension-jvm/charts/steadybit-extension-jvm'
 let g:netrw_dirhist_2='/Users/jedmeier'
 let g:netrw_dirhist_1='/Users/jedmeier/.k9s'
-let g:netrw_dirhist_0='/Users/jedmeier/projects/steadybit/docker-images/zulu-openjdk'
-let g:netrw_dirhist_9='/Users/jedmeier/projects/steadybit/helm-charts/charts/steadybit-outpost'

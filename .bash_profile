@@ -17,7 +17,7 @@ export BASH_IT="/Users/jedmeier/.dotfiles/.bash_it"
 export BASH_IT_THEME='powerline'
 
 
-export POWERLINE_PROMPT="user_info scm aws_profile cwd"
+export POWERLINE_PROMPT="user_info scm cwd"
 
 # Some themes can show whether `sudo` has a current token or not.
 # Set `$THEME_CHECK_SUDO` to `true` to check every prompt:

@@ -1,5 +1,6 @@
 *.private
 
+
 ### https://raw.github.com/github/gitignore/master/Global/OSX.gitignore
 
 .DS_Store
@@ -66,3 +67,4 @@ dist/
 
 #claude
 **/.claude/**/*.local.json
+**/.claude/worktrees/**
